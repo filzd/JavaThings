@@ -31,8 +31,17 @@ public class FileMover {
                     System.out.println(ANSI_RED + "Invalid choice. Please choose from 'mkdir', 'rmdir', or 'txt'." + ANSI_RESET);
                     break;
             }
+            try {
+                Thread.sleep(2000); // Sleep for 1 second
+            } catch (InterruptedException e) {
+                // Handle the exception if necessary
+                e.printStackTrace();
+            }
         }
+
     }
+
+
 
     public static void createDirectory(Scanner scanner) {
         System.out.print(ANSI_BLUE + "Enter the location (path) where you want to create the directory: " + ANSI_RESET);
