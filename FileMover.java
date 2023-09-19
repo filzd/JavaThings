@@ -32,7 +32,7 @@ public class FileMover {
                     break;
             }
             try {
-                Thread.sleep(2000); // Sleep for 1 second
+                Thread.sleep(2000); // Sleep for 2 sec
             } catch (InterruptedException e) {
                 // Handle the exception if necessary
                 e.printStackTrace();
