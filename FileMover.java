@@ -99,10 +99,10 @@ public class FileMover {
     }
 
     public static void removeTextFile(Scanner scanner) {
-        System.out.print("Enter the location (path) of the text file you want to remove: ");
+        System.out.print(ANSI_BLUE + "Enter the location (path) of the text file you want to remove: " + ANSI_RESET);
         String location = scanner.nextLine();
 
-        System.out.print("Enter the name of the text file you want to remove: ");
+        System.out.print(ANSI_BLUE + "Enter the name of the text file you want to remove: " + ANSI_RESET);
         String fileName = scanner.nextLine();
 
         // Combine the location and file name to create the full path
@@ -112,12 +112,12 @@ public class FileMover {
 
         if (fileToDelete.exists()) {
             if (fileToDelete.delete()) {
-                System.out.println("Text file '" + fullPath + "' removed successfully.");
+                System.out.println(ANSI_GREEN + "Text file '" + fullPath + "' removed successfully." + ANSI_RESET);
             } else {
-                System.out.println("Failed to remove text file '" + fullPath + "'.");
+                System.out.println(ANSI_RED + "Failed to remove text file '" + fullPath + "'." + ANSI_RESET);
             }
         } else {
-            System.out.println("Text file '" + fullPath + "' does not exist.");
+            System.out.println(ANSI_GREEN + "Text file '" + fullPath + "' does not exist." + ANSI_RESET);
         }
     }
 
