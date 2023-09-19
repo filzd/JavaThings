@@ -14,6 +14,13 @@ public class FileMover {
             System.out.print("\033[H\033[2J");
             System.out.print(ANSI_BLUE + "Enter your choice (mkdir, rmdir, mktxt, rmtxt): " + ANSI_RESET);
             String choice = scanner.nextLine();
+            
+        
+            if ("q".equalsIgnoreCase(choice)) {
+                System.out.println(ANSI_GREEN + "Exiting the program." + ANSI_RESET);
+                break; 
+            }
+
             switch (choice) {
                 case "mkdir":
                     createDirectory(scanner);
@@ -34,14 +41,11 @@ public class FileMover {
             try {
                 Thread.sleep(2000); // Sleep for 2 sec
             } catch (InterruptedException e) {
-                // Handle the exception if necessary
                 e.printStackTrace();
             }
         }
 
     }
-
-
 
     public static void createDirectory(Scanner scanner) {
         System.out.print(ANSI_BLUE + "Enter the location (path) where you want to create the directory: " + ANSI_RESET);
@@ -88,10 +92,8 @@ public class FileMover {
         System.out.print(ANSI_BLUE + "Enter the name of the text file you want to create (without extension): " + ANSI_RESET);
         String fileName = scanner.nextLine();
 
-        // Add .txt extension to the file name
         fileName += ".txt";
 
-        // Combine the location and file name to create the full path
         String fullPath = location + File.separator + fileName;
 
         System.out.print("Enter the content of the text file: ");
@@ -114,7 +116,6 @@ public class FileMover {
         System.out.print(ANSI_BLUE + "Enter the name of the text file you want to remove: " + ANSI_RESET);
         String fileName = scanner.nextLine();
 
-        // Combine the location and file name to create the full path
         String fullPath = location + File.separator + fileName;
 
         File fileToDelete = new File(fullPath);
